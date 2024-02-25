@@ -10,4 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/button_add_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/crear_nuevo_articulo"
+        android:background="@color/green"
+        android:layout_gravity="bottom" />
+
 </FrameLayout>
