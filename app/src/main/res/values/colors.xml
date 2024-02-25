@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Esenciales -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#E7D40A</color>
+    <color name="red">#EF280F</color>
+    <color name="green">#6DC36D</color>
+    <color name="blue">#109DFA</color>
+    <color name="brown">#A52A2A</color>
+    <color name="pink">#FFB6C1</color>
+    <color name="orange">#E36B2C</color>
+
+    <!-- Pastel -->
+    <color name="yellow_pastel">#F3EFA1</color>
+    <color name="orange_pastel">#FEAEBB</color>
+    <color name="pink_pastel">#F3B2DB</color>
+    <color name="purple_pastel">#C19ADE</color>
+    <color name="blue_pastel">#6FCFEB</color>
+    <color name="green_pastel">#99E6D8</color>
 </resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="9dp"
+    android:layout_marginHorizontal="9dp"
+    app:cardCornerRadius="35dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_card"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/description_image_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@color/yellow_pastel" />
+
+        <TextView
+            android:id="@+id/name_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/description_name_card"
+            android:textColor="@color/blue"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_card"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/trademark_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/description_trademark_card"
+            android:textColor="@color/brown"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_card"
+            app:layout_constraintTop_toBottomOf="@+id/name_article" />
+
+        <TextView
+            android:id="@+id/price_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/description_price_card"
+            android:textColor="@color/green"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_card"
+            app:layout_constraintTop_toBottomOf="@+id/trademark_article" />
+
+        <ImageView
+            android:id="@+id/icon_create_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/icon_create"
+            android:src="@drawable/ic_plus_circle"
+            app:layout_constraintStart_toEndOf="@+id/image_card"
+            app:layout_constraintTop_toBottomOf="@+id/price_article" />
+
+        <ImageView
+            android:id="@+id/icon_edit_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/icon_edit"
+            android:src="@drawable/ic_update"
+            app:layout_constraintStart_toEndOf="@+id/icon_create_card"
+            app:layout_constraintTop_toBottomOf="@+id/price_article" />
+
+        <ImageView
+            android:id="@+id/icon_delete_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/icon_delete"
+            android:src="@drawable/ic_delete_circle"
+            app:layout_constraintStart_toEndOf="@+id/icon_edit_card"
+            app:layout_constraintTop_toBottomOf="@+id/price_article" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

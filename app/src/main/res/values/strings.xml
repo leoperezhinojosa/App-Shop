@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">App-Shop</string>
+    <string name="button_login_text">ACCEDER</string>
+    <string name="default_pass_text">Clave</string>
+    <string name="default_email_text">Usuario</string>
+    <string name="login_text">Inicio de Sesión</string>
+    <string name="description_price_card">Precio</string>
+    <string name="description_trademark_card">Marca</string>
+    <string name="description_name_card">Nombre del artículo</string>
+    <string name="description_image_card">imagen_articulo</string>
+    <string name="icon_create">icon_create</string>
+    <string name="icon_edit">icon_edit</string>
+    <string name="icon_delete">icon_delete</string>
 </resources>

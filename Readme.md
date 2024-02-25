@@ -4,7 +4,7 @@
 
 ¡Bienvenido a mi aplicación! Este proyecto abarca en su totalidad las versiones que se han demandado para la asignatura de **Programación Movil** en el ciclo de **Desarrollo de Aplicaciones Multiplataforma (DAM)** del Instituto **Virgen del Cármen**. Con esta introducción, se pretende presentar cada parte debidamente documentada.
 
-## Versiones: Índice:
+## 1 - Versiones: Índice:
 
 Éstas son las versiones y la especificación de cada una de ellas:
 
@@ -19,7 +19,29 @@
 - Versión 4.1.- Adaptamos nuestro proyecto con API REST.
 - Versión 4.2.- Crearemos listados genéricos para todos los usuarios registrados.
 
-## Comienzo del proyecto:
+## 2 - Explicación del proyecto
+
+Este proyecto tiene como finalidad crear una aplicación para android de una tienda de **productos de hipermercado**. Contiene las siguientes funciones:
+- Articulos: 
+    - Lista de artículos de la tienda. Sus características son:
+        - referencia, nombre, marca, precio, unidades.
+
+- Usuario: 
+    - Modelo de Usuario para registrarse. Contempla 2 campos:
+        - Correo electrónico y Contraseña (email/password). Con este tipo de usuario se registran administradores y clientes.
+
+- Tipo de Usuario: Cliente (Customer)
+    - Contempla los siguientes datos adicionales:
+        - ID, Nombre y apellidos, teléfono, dirección, y un listado de los articulos a adquirir, que comienza de cero.
+
+- Tipo de Usuario: Administrador (Admin)
+    - Este tipo de usuario tiene otro tipo de aplicación:
+        - Administración de Usuarios (Crear, Leer, Modificar y Borrar cualquier usuario).
+        - Administración de Artículos de la tienda (Crear, Leer, Modificar y Borrar cualquier artículo).
+
+- Usuario: Administrador
+
+### 2.1 - Comienzo del proyecto:
 
 Se comienza introduciendo una aplicación vacía en el IDE de programación adaptado a **Android:** `Android Studio`. Los pasos a seguir son:
 
@@ -40,3 +62,24 @@ Y pulsar **Sync Now**, para que el proyecto quede bien configurado. Se volverá 
 
 ## Página inicial:
 
+El program se encuentra en el archivo **MainActivity**. Buscar en el listado de carpetas:
+- app/java/res/layout/activity_main.xml
+
+Y añadir la siguiente configuración, que contendrá el listado de productos de la aplicación:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaArticulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</FrameLayout>
+
+```
