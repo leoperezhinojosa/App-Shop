@@ -1,4 +1,4 @@
-package com.leoperez.app_shop.models
+package com.leoperez.app_shop.model
 
 data class Customer (
     // Atributos

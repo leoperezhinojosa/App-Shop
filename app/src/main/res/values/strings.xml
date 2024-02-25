@@ -2,14 +2,31 @@
     <string name="app_name">App-Shop</string>
     <string name="button_login_text">ACCEDER</string>
     <string name="default_pass_text">Clave</string>
-    <string name="default_email_text">Usuario</string>
+    <string name="default_email_text">Email</string>
     <string name="login_text">Inicio de Sesión</string>
     <string name="description_price_card">Precio</string>
     <string name="description_trademark_card">Marca</string>
     <string name="description_name_card">Nombre del artículo</string>
     <string name="description_image_card">imagen_articulo</string>
-    <string name="icon_create">icon_create</string>
-    <string name="icon_edit">icon_edit</string>
+    <string name="access_register_text">¿Aún sin Usuario?</string>
+    <string name="access_register_button">REGISTRARSE\n</string>
+    <string name="button_register_text">REGISTRAR USUARIO</string>
+    <string name="access_login_text">¿Ya tienes Usuario?</string>
+    <string name="access_login_button">INICIAR SESIÓN</string>
+    <string name="register_text">REGISTRO DE USUARIO</string>
+    <string name="default_name_text">Nombre</string>
+    <string name="default_phone_text">Teléfono</string>
+    <string name="default_address_text">Dirección</string>
+    <string name="shopping_cart_fragment">Cesta de la compra</string>
+    <string name="logout_fragment">Cerrar sesión</string>
+    <string name="user_fragment">MI PERFIL</string>
+    <string name="bottomNav1">Tu Cesta</string>
+    <string name="bottomNav2">Perfil</string>
+    <string name="bottomNav3">Cerrar Sesión</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="crear_nuevo_articulo">CREAR ARTICULO</string>
     <string name="icon_delete">icon_delete</string>
-    <string name="crear_nuevo_articulo">Crear Nuevo Artículo</string>
+    <string name="icon_edit">icon_edit</string>
+    <string name="icon_create">icon_create</string>
 </resources>

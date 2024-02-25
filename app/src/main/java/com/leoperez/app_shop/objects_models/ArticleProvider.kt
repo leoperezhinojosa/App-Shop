@@ -1,6 +1,6 @@
 package com.leoperez.app_shop.objects_models
 
-import com.leoperez.app_shop.models.Article
+import com.leoperez.app_shop.model.Article
 
 class ArticleProvider {
     companion object {

@@ -1,6 +1,6 @@
 package com.leoperez.app_shop.objects_models
 
-import com.leoperez.app_shop.models.Customer
+import com.leoperez.app_shop.model.Customer
 
 object Customers {
     // Lista de clientes:

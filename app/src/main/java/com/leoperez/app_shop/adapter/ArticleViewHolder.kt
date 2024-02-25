@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.leoperez.app_shop.databinding.ItemlistCardviewBinding
-import com.leoperez.app_shop.models.Article
+import com.leoperez.app_shop.model.Article
 
 class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

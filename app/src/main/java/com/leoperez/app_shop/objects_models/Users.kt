@@ -1,6 +1,6 @@
 package com.leoperez.app_shop.objects_models
 
-import com.leoperez.app_shop.models.User
+import com.leoperez.app_shop.model.User
 
 object Users {
     val users = mutableListOf<User>()

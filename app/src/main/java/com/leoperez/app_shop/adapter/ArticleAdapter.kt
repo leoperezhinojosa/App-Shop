@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.leoperez.app_shop.R
-import com.leoperez.app_shop.models.Article
+import com.leoperez.app_shop.model.Article
 
 class ArticleAdapter(
     private val articleList: MutableList<Article>,
