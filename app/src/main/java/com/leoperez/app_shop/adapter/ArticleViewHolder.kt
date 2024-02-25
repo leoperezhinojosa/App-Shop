@@ -1,21 +1,19 @@
 package com.leoperez.app_shop.adapter
 
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.leoperez.app_shop.R
+import com.bumptech.glide.Glide
+import com.leoperez.app_shop.databinding.ItemlistCardviewBinding
 import com.leoperez.app_shop.models.Article
 
 class ArticleViewHolder (view: View) : RecyclerView.ViewHolder(view){
 
-    val name = view.findViewById<TextView>(R.id.name_article)
-    val trademark = view.findViewById<TextView>(R.id.trademark_article)
-    val price = view.findViewById<TextView>(R.id.price_article)
-    val image = view.findViewById<ImageView>(R.id.image_card)
+    val binding = ItemlistCardviewBinding.bind(view)
+
     fun render(article: Article) {
-        price.text = article.price.toString()
-        trademark.text = article.trademark
-        name.text = article.name
+        binding.priceArticle.text = article.price.toString()
+        binding.trademarkArticle.text = article.trademark
+        binding.nameArticle.text = article.name
+        Glide.with(binding.imageCard.context).load(article.image).into(binding.imageCard)
     }
 }
