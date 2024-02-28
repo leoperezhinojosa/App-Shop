@@ -1,4 +1,4 @@
-package com.leoperez.app_shop.objects_models
+package com.leoperez.app_shop.data
 
 import com.leoperez.app_shop.model.Article
 

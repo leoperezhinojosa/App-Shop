@@ -9,7 +9,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.leoperez.app_shop.databinding.ActivityLoginBinding
+import com.leoperez.app_shop.retrofit.RequestLoginUser
+import com.leoperez.app_shop.retrofit.RetrofitModule
 import com.leoperez.app_shop.viewmodel.LoginViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,42 +42,75 @@ class LoginActivity : AppCompatActivity() {
             val email = insertEmail.text.toString()
             val pass = insertPass.text.toString()
 
-            // Verificación de Login:
+            // Verificación de Login con Retrofit:
 
-            // Guardar el usuario para la sesión:
-            val userLogged = loginViewModel.login(email, pass)
-
-            if (userLogged != null) {
-                Toast.makeText(
-                    this@LoginActivity,
-                    "¡Sesión Iniciada!",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                // Guardar la sesión del usuario con SharedPreferences:
-                val sharedPreferences = getSharedPreferences("MyApp", Context.MODE_PRIVATE)
-                with(sharedPreferences.edit()) {
-                    putString("email", email)
-                    putString("pass", pass)
-                    apply()
+            GlobalScope.launch(Dispatchers.IO) {
+                val response = withContext(Dispatchers.IO) {
+                    RetrofitModule.loginService.auth(RequestLoginUser(email, pass))
                 }
 
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(intent)
-            } else {
-                Toast.makeText(
-                    this@LoginActivity,
-                    "Email y/o Clave incorrectos",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
+                if (response.isSuccessful) {
+                    val sharedPreferences = getSharedPreferences("MyApp", Context.MODE_PRIVATE)
+                    // Guardar la sesión del usuario con SharedPreferences:
+                    with(sharedPreferences.edit()) {
+                        putString("email", email)
+                        putString("pass", pass)
+                        apply()
+                    }
 
-        // Pasar a la pantalla de Registro:
-        val buttonGoToRegister: Button = binding.buttonAccessRegister
-        buttonGoToRegister.setOnClickListener {
-            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
-            startActivity(intent)
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@LoginActivity,
+                            "Email y/o Clave incorrectos",
+                            Toast.LENGTH_LONG).show()
+                    }
+//                    Toast.makeText(
+//                        this@LoginActivity,
+//                        "Email y/o Clave incorrectos",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+                }
+
+
+//            // Verificación de Login:
+//
+//            // Guardar el usuario para la sesión:
+//            val userLogged = loginViewModel.login(email, pass)
+//
+//            if (userLogged != null) {
+//                Toast.makeText(
+//                    this@LoginActivity,
+//                    "¡Sesión Iniciada!",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//
+//                // Guardar la sesión del usuario con SharedPreferences:
+//                val sharedPreferences = getSharedPreferences("MyApp", Context.MODE_PRIVATE)
+//                with(sharedPreferences.edit()) {
+//                    putString("email", email)
+//                    putString("pass", pass)
+//                    apply()
+//                }
+//
+//                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+//                startActivity(intent)
+//            } else {
+//                Toast.makeText(
+//                    this@LoginActivity,
+//                    "Email y/o Clave incorrectos",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//            }
+            }
+
+            // Pasar a la pantalla de Registro:
+            val buttonGoToRegister: Button = binding.buttonAccessRegister
+            buttonGoToRegister.setOnClickListener {
+                val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

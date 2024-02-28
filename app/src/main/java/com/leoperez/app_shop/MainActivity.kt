@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.leoperez.app_shop.adapter.ArticleAdapter
 import com.leoperez.app_shop.databinding.ActivityMainBinding
 import com.leoperez.app_shop.model.Article
-import com.leoperez.app_shop.objects_models.ArticleProvider
+import com.leoperez.app_shop.data.ArticleProvider
 
 class MainActivity : AppCompatActivity() {
 
