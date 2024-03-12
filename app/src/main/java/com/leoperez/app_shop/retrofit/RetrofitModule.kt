@@ -18,7 +18,7 @@ object RetrofitModule {
     única instancia del Servicio.
     */
 
-    private const val URL_BASE_RETROFIT = "http://10.0.2.2/api/"
+    private const val URL_BASE_RETROFIT = "http://10.0.2.2/api/endp/"
 
     val loginService: LoginService by lazy {
         Retrofit.Builder()
@@ -36,4 +36,11 @@ object RetrofitModule {
             .create(RegisterService::class.java)
     }
 
+    val getArticleService: GetArticleService by lazy {
+        Retrofit.Builder()
+            .baseUrl(URL_BASE_RETROFIT)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(GetArticleService::class.java)
+    }
 }

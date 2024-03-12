@@ -5,6 +5,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface RegisterService {
-    @POST("endp/registro")
+    @POST("registro")
     suspend fun registro(@Body registerUser: RequestRegisterUser): Response<ResponseRegister>
 }

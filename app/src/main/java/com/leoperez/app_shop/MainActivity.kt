@@ -8,6 +8,7 @@ import com.leoperez.app_shop.adapter.ArticleAdapter
 import com.leoperez.app_shop.databinding.ActivityMainBinding
 import com.leoperez.app_shop.model.Article
 import com.leoperez.app_shop.data.ArticleProvider
+import com.leoperez.app_shop.view.DialogArticle
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,18 +28,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addArticle() {
-        val article = Article(
-            "000F",
-            "Nuevo Artículo",
-            "Nueva Marca",
-            "https://cdn-icons-png.flaticon.com/512/5540/5540433.png",
-            0.0,
-            0
-        )
-        articleList.add(index = 0,article)
-        adapter.notifyItemInserted(0)
-        manager.scrollToPositionWithOffset(0, 10)
-        Toast.makeText(this, "Nuevo artículo (predeterminado) creado", Toast.LENGTH_SHORT).show()
+        val dialogArticle = DialogArticle()
+        dialogArticle.show(supportFragmentManager, "Añadir")
     }
 
     private fun initRecyclerView() {
@@ -58,6 +49,5 @@ class MainActivity : AppCompatActivity() {
     }
     private fun onItemSelected(article: Article) {
         Toast.makeText(this, article.name, Toast.LENGTH_SHORT).show()
-        // Implementar la navegación a la pantalla de detalle
     }
 }
