@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.leoperez.app_shop.LoginActivity
-import com.leoperez.app_shop.R
 import com.leoperez.app_shop.databinding.ActivityRegisterBinding
 import com.leoperez.app_shop.viewmodel.RegisterViewModel
 
@@ -27,10 +26,10 @@ class RegisterActivity : AppCompatActivity() {
         // Conexión a la interfaz de cliente:
         val buttonRegister = binding.buttonRegister
         val insertEmail = binding.insertEmailRegister
-        val insertPass = binding.insertPassRegister
+        val insertPass = binding.insertPasswordRegister
         val insertName = binding.insertNameRegister
-        val insertPhone = binding.insertPhoneRegister
-        val insertAddress = binding.insertAddressRegister
+//        val insertPhone = binding.insertPhoneRegister
+//        val insertAddress = binding.insertAddressRegister
 
         // Configuración del botón de Registro:
         buttonRegister.setOnClickListener {
@@ -39,11 +38,11 @@ class RegisterActivity : AppCompatActivity() {
             val email = insertEmail.text.toString()
             val pass = insertPass.text.toString()
             val name = insertName.text.toString()
-            val phone = insertPhone.text.toString()
-            val address = insertAddress.text.toString()
+//            val phone = insertPhone.text.toString()
+//            val address = insertAddress.text.toString()
 
             // Registro de Usuario:
-            if (registerViewModel.register(email, pass, 0, false) == null) {
+            if (registerViewModel.register(email, pass, name, 1, false) == null) {
                 // Si el registro es correcto:
                 Toast.makeText(
                     this@RegisterActivity,

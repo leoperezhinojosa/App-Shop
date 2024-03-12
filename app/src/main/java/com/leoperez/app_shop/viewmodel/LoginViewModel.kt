@@ -14,14 +14,14 @@ class LoginViewModel : ViewModel() {
         users.value = UserProvider.getUsers()
     }
 
-    // Función que verifica el login
-    fun login(email: String, pass: String): User? {
-        val usersList = users.value ?: listOf()
-        for (user in usersList) {
-            // Si el email y la clave coinciden con algún usuario, se devuelve el usuario
-            if ((user.email == email) && (user.pass == pass))
-                return user
-        }
-        return null
-    }
+    // Función que verifica el login: No se está usando. Cambiar si se usa ViewModel *
+//    fun login(email: String, pass: String): User? {
+//        val usersList = users.value ?: listOf()
+//        for (user in usersList) {
+//            // Si el email y la clave coinciden con algún usuario, se devuelve el usuario
+//            if ((user.email == email) && (user.pass == pass))
+//                return user
+//        }
+//        return null
+//    }
 }

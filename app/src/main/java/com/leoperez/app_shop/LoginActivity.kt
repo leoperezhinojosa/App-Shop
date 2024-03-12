@@ -7,22 +7,19 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.viewModels
 import com.leoperez.app_shop.databinding.ActivityLoginBinding
 import com.leoperez.app_shop.retrofit.RequestLoginUser
 import com.leoperez.app_shop.retrofit.RetrofitModule
-import com.leoperez.app_shop.viewmodel.LoginViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class LoginActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityLoginBinding
 
     // Declaración de la variable loginViewModel con el delegado by viewModels
-    private val loginViewModel: LoginViewModel by viewModels()
+//    private val loginViewModel: LoginViewModel by viewModels() *
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,20 +30,20 @@ class LoginActivity : AppCompatActivity() {
         // Conexión a la interfaz de cliente:
         val buttonLogin: Button = binding.buttonLogin
         val insertEmail: EditText = binding.insertEmail
-        val insertPass: EditText = binding.insertPass
+        val insertPassword: EditText = binding.insertPass
 
         // Configuración del botón de Login:
         buttonLogin.setOnClickListener {
 
             // Obtener datos de Email/Clave:
             val email = insertEmail.text.toString()
-            val pass = insertPass.text.toString()
+            val password = insertPassword.text.toString()
 
             // Verificación de Login con Retrofit:
 
             GlobalScope.launch(Dispatchers.IO) {
                 val response = withContext(Dispatchers.IO) {
-                    RetrofitModule.loginService.auth(RequestLoginUser(email, pass))
+                    RetrofitModule.loginService.auth(RequestLoginUser(email, password))
                 }
 
                 if (response.isSuccessful) {
@@ -54,11 +51,11 @@ class LoginActivity : AppCompatActivity() {
                     // Guardar la sesión del usuario con SharedPreferences:
                     with(sharedPreferences.edit()) {
                         putString("email", email)
-                        putString("pass", pass)
+                        putString("pass", password)
                         apply()
                     }
 
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val intent = Intent(this@LoginActivity, MainActivity :: class.java)
                     startActivity(intent)
                 } else {
                     withContext(Dispatchers.Main) {
@@ -74,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
 
-//            // Verificación de Login:
+//            // Verificación de Login: *
 //
 //            // Guardar el usuario para la sesión:
 //            val userLogged = loginViewModel.login(email, pass)

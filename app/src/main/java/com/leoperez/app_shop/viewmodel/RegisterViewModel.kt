@@ -10,7 +10,7 @@ class RegisterViewModel : ViewModel() {
     private val users = MutableLiveData<List<User>>()  // Usuarios registrados
 
     // Función que registra un usuario si no lo encuentra, y lo asigna al listado de usuarios
-    fun register(email: String, pass: String, id: Int, admin: Boolean): User? {
+    fun register(email: String, pass: String, name: String, id: Int, admin: Boolean): User? {
         val usersList = users.value ?: listOf()
 
         // Si el email ya existe en la lista de usuarios, no se registra
@@ -23,5 +23,4 @@ class RegisterViewModel : ViewModel() {
         users.postValue(currentUsers + currentUser)
         return currentUser
     }
-    // Todo: Implementar el resto de datos para el registro
 }

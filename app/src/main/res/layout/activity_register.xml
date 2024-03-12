@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.114" />
 
     <EditText
-        android:id="@+id/insertPassRegister"
+        android:id="@+id/insert_password_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="64dp"
@@ -44,7 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.27" />
-
 
     <EditText
         android:id="@+id/insertNameRegister"
@@ -59,31 +58,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.433" />
 
-    <EditText
-        android:id="@+id/insertPhoneRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="64dp"
-        android:hint="@string/default_phone_text"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+<!--    <EditText-->
+<!--        android:id="@+id/insertPhoneRegister"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="64dp"-->
+<!--        android:hint="@string/default_phone_text"-->
+<!--        android:minHeight="48dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.59" />-->
 
-    <EditText
-        android:id="@+id/insertAddressRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="64dp"
-        android:hint="@string/default_address_text"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+<!--    <EditText-->
+<!--        android:id="@+id/insertAddressRegister"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="64dp"-->
+<!--        android:hint="@string/default_address_text"-->
+<!--        android:minHeight="48dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.742" />-->
 
     <Button
         android:id="@+id/buttonRegister"
@@ -99,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/insertAddressRegister"
+        app:layout_constraintTop_toBottomOf="@+id/insertNameRegister"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
